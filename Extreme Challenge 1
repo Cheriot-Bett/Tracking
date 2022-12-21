@@ -1,0 +1,138 @@
+#T = int(input('Number of Test Cases :'))
+nl = "\n"
+dancer = (
+      f" o{nl}"
+      f"/|\{nl}"
+      f"/ \{nl}"
+)
+nl = "\n"
+print(f" o{nl}"
+      f"/|\{nl}"
+      f"/ \{nl}")
+print(dancer)
+def parser():
+   
+    lst = []
+    dancer = [
+        [' o '],
+        ['/|\\'],
+        ['/ \\']]
+    # creating an empty list
+    pref= "d"
+    
+    # number of elements as input
+    n = int(input("Enter Number Of Commands : "))
+    # iterating till the range
+    for i in range(0, n):
+       ele = int(input("Enter Command:"))
+       # adding the element
+       #lst.append(pref + str(ele)) 
+       lst.append(ele) 
+       
+    print(lst)
+
+    commands = [
+        "left hand to head",
+        "left hand to hip",
+        "left hand to start",
+        "left leg in",
+        "left leg out",
+        "right hand to head",
+        "right hand to hip",
+       "right hand to start",
+      "right leg in",
+     "right leg out",
+      "turn",
+     "say"
+    ]
+    #print(commands[5])
+   
+    for i in lst:
+        new_commands = []
+        print(commands[i])
+        new_commands.append(commands[i])
+
+        if new_commands[0].startswith("say"): 
+          words =  input("Enter Words:")
+          new_words = "say " + words
+          print(new_words)
+          return new_words
+
+        if i == "left hand to head":
+          dancer = (
+          f" o){nl}"
+          f"/|{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer 
+
+        if i == "left hand to hip":
+          dancer = (
+          f" o{nl}"
+          f"/|>{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer   
+
+        if i == "left hand to start":
+          dancer = (
+          f" o{nl}"
+          f"/|\{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer    
+
+        if i == "right leg in":
+          dancer = (
+          f" o{nl}"
+          f"/|\{nl}"
+          f"< \{nl}"
+          )
+          print(dancer)
+          return dancer 
+
+        if i == "left leg out":
+          dancer = (
+          f" o{nl}"
+          f"/|\{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer  
+
+        if i == "right hand to hip":
+          dancer = (
+          f" o{nl}"
+          f"<|\{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer            
+
+        else:
+          dancer = (
+          f" o{nl}"
+          f"/|\{nl}"
+          f"/ \{nl}"
+          )
+          print(dancer)
+          return dancer   
+
+          
+      
+      
+
+       
+
+
+
+
+parser()    
+        
+                 
+
+   
+      

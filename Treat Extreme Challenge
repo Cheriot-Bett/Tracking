@@ -1,0 +1,64 @@
+
+def do_tests(T):
+  for i in range(0, T):  
+    M = str(input('No of stations:, Fuel tank capacity:, Cost of fuel:'))
+    lst = []
+    words_list = M.split()
+    print(words_list)
+    stations = int(words_list[0])
+    tank_capacity = words_list[1]
+    fuel_cost = words_list[2]
+    initial_cost = int(tank_capacity) * int(fuel_cost)
+    all = []
+    for i in range(0, stations):      
+       ele = str(input("Fuel required To travel to next station:, Cost of fuel at next station:"))
+       all.append( ele.split())
+       #all.append(words_list)
+       #lst.append(ele) 
+     
+       
+    print(all)   
+    #print(all[stations])  
+    get_cost(all,stations,initial_cost,tank_capacity)     
+def get_cost(all,stations,initial_cost,tank_capacity):
+    journey = 0
+    print("stations")
+    print(stations)
+    expenses = 0
+    for i in range(0, stations):
+        fuel_consumed = all[i][0]
+        fuel_amount = all[i][1]
+        if i == 0:
+         remaining_fuel = int(tank_capacity) - int(fuel_consumed)
+        else:
+         remaining_fuel = int(remaining_fuel) - int(fuel_consumed)
+
+       
+        print("remaining")
+        print(remaining_fuel)
+        i = i+1
+        if i < stations:
+         next_station = all[i][0]
+         if int(remaining_fuel) < int(next_station):
+            
+            refill = int(tank_capacity) - int(remaining_fuel)
+            print(refill)
+            print("refill")
+            expenses =  500 + (refill * int(fuel_amount))
+            remaining_fuel = tank_capacity
+            continue
+            
+         else:
+            remaining_fuel =  remaining_fuel
+            print("refuel")
+            continue
+    total_cost = initial_cost + expenses
+    print(total_cost)
+    return total_cost
+
+
+
+
+
+T = int(input('Number of Test Cases:'))
+do_tests(T)
